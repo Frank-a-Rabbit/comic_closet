@@ -1,0 +1,25 @@
+:root {
+  --black: #000;
+  --burgundy: #711426;
+  --light-orange: #EDBC5A;
+
+  --size-2: 2px;
+  --size-4: 4px;
+  --size-8: 8px;
+  --size-16: 16px;
+
+  --font-title: "Sigmar One", sans-serif;
+  --font-display: "Genos", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

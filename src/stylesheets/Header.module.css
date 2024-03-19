@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--size-8);
+    background-color: var(--burgundy);
+}
+
+.header h1 {
+    color: white;
+    font-family: var(--font-title);
+}
+
+.detailsCont {
+    display: flex;
+    flex-direction: column;
+}
+
+.detailsCont button {
+    padding: var(--size-2) var(--size-8);
+    color: white;
+    text-transform: uppercase;
+    background-color: var(--light-orange);
+    border: none;
+    border-radius: var(--size-8);
+    margin: auto;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details span {
+    color: white;
+}
+
+.avatar {
+    max-width: 50px;
+    border-radius: 100%;
+    margin-bottom: var(--size-8);
+}
