@@ -1,0 +1,61 @@
+.filterCont {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--black);
+    padding: var(--size-16);
+    z-index: 1;
+}
+
+.dropDown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: var(--size-16);
+    background-color: var(--black);
+}
+
+.dropDown button {
+    padding: var(--size-8);
+    padding-left: 0;
+    color: white;
+    text-align: left;
+}
+
+.dropDown button > svg {
+    margin-left: var(--size-8);
+}
+
+.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.dropDown > div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-16);
+}
+
+.filterCont.active .dropDown {
+    display: flex;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.controls > button {
+    color: white;
+    font-size: calc(var(--size-4) * 5);
+}
+
+.controls > button > svg {
+    margin-left: var(--size-8);
+}

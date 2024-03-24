@@ -1,0 +1,44 @@
+.grid {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: calc(var(--size-16) * 2);
+    scroll-snap-type: x mandatory;
+    margin-top: calc(var(--size-16) * 2);
+}
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+  
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: calc(var(--size-16) * 5) auto;
+    animation: spin 1s linear infinite;
+}
+
+.spinner svg {
+    transform: scale(5);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: calc(var(--size-16) * 4);
+}
+
+.prompt {
+    font-size: calc(var(--size-16) * 1.5);
+}
+
+.prompt svg {
+    margin-left: var(--size-8);
+}

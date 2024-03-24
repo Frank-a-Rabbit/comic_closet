@@ -1,0 +1,23 @@
+.pager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--size-8) * 3);
+    font-size: calc(var(--size-8) * 2.5);
+}
+
+.pager button svg {
+    transform: scale(2);
+}
+
+.pager button:first-of-type {
+    margin-right: var(--size-16);
+}
+
+.pager button:last-of-type {
+    margin-left: var(--size-16);
+}
+
+.pager button svg path {
+    fill: var(--burgundy);
+}

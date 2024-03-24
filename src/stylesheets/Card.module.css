@@ -1,0 +1,50 @@
+.card {
+    position: relative;
+    min-width: calc(100% - (var(--size-8) * 2));
+    margin: 0 var(--size-8);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    background-color: var(--black);
+    scroll-snap-align: start;
+    scroll-margin: var(--size-8);
+}
+
+.cardImage {
+    width: 100%;
+    aspect-ratio: 350 / 390;
+    object-fit: cover;
+}
+
+.contentSection {
+    position: relative;
+    padding: var(--size-16);
+}
+
+.faveBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 2px solid white;
+    background-color: var(--black);
+}
+
+.faveBtn svg path {
+    fill: white;
+}
+
+.cardTitle {
+    margin: 0 0 var(--size-8);
+    font-size: calc(var(--size-8) * 3);
+    line-height: 1.2;
+    color: white;
+}
+
+.card p {
+    color: white;
+}

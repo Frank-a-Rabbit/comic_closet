@@ -10,7 +10,6 @@ const Header = () => {
         dispatch(logoutUser());
     }
     const user = useSelector(state => state.user);
-    console.log('user ', user)
     return (
         <header className={styles.header}>
             <h1>Comic Closet</h1>
