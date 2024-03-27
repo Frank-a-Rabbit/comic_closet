@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchComics, setComics } from '../redux/features/comics/comicSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchComics, fetchSavedComics, toggleShowFavorites } from '../redux/features/comics/comicSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilter, faBoltLightning, faHandPointRight } from '@fortawesome/free-solid-svg-icons'
 import styles from '../stylesheets/ComicFilter.module.css'
@@ -9,6 +9,7 @@ function ComicFilter() {
   const dispatch = useDispatch();
   const [dropdownActive, toggleDropDown] = useState(false);
   const [comicsFetched, setComicsFetched] = useState(false);
+  const showFavorites = useSelector((state) => state.comics.showFavorites);
 
   const handleFetchComics = () => {
     dispatch(fetchComics());
@@ -17,10 +18,8 @@ function ComicFilter() {
   };
 
   const handleFetchSavedComics = () => {
-    const savedComics = JSON.parse(localStorage.getItem('savedComics')) || [];
-    // Assuming you have an action to set comics in your state
-    // Replace `setComics` with the actual action creator you have
-    dispatch(setComics(savedComics));
+    console.log('yes bro')
+    dispatch(toggleShowFavorites(!showFavorites));
   };
 
   const toggleDropDownMenu = () => {
@@ -31,7 +30,7 @@ function ComicFilter() {
     <div className={`${styles.filterCont} ${dropdownActive ? styles.active : ''}`}>
       <div className={styles.controls}>
         <button aria-label='Show/Hide Dropdown Menu' onClick={toggleDropDownMenu}>Filter<FontAwesomeIcon icon={faFilter} /></button>
-        <button>Show Favorites<FontAwesomeIcon icon={faBoltLightning} /></button>
+        <button onClick={handleFetchSavedComics}>Show Favorites<FontAwesomeIcon icon={faBoltLightning} /></button>
       </div>
       <div className={styles.dropDown}>
         <div className={styles.buttons}>

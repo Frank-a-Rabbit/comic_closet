@@ -7,6 +7,7 @@ import ComicsGrid from './components/ComicsGrid';
 import { auth } from './utils/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { loginUser } from './redux/features/users/userSlice';
+import { fetchSavedComics } from './redux/features/comics/comicSlice';
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,13 @@ function App() {
     });
     return () => unsubscribe();
   }, [dispatch]);
+
+  useEffect(() => {
+    if (user.user) {
+      console.log('affirmative')
+      dispatch(fetchSavedComics(user.user));
+    }
+  }, [user, dispatch]);
 
   return (
     <div className="App">

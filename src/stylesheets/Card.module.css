@@ -34,6 +34,10 @@
     background-color: var(--black);
 }
 
+.fave {
+    background-color: var(--pink);
+}
+
 .faveBtn svg path {
     fill: white;
 }

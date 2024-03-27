@@ -8,6 +8,10 @@
     z-index: 1;
 }
 
+.filterCont button {
+    cursor: pointer;
+}
+
 .dropDown {
     display: none;
     position: absolute;
@@ -23,6 +27,7 @@
     padding-left: 0;
     color: white;
     text-align: left;
+    cursor: pointer;
 }
 
 .dropDown button > svg {
