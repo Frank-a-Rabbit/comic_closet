@@ -43,7 +43,7 @@ const ComicsGrid = () => {
         {showFavorites && (
             <>
                 <div className={styles.grid}>
-                    {comics.map((comic) => (
+                    {comics.slice().sort((a, b) => a.name.localeCompare(b.name)).map((comic) => (
                         <Card
                             key={comic.id}
                             comic={comic}
