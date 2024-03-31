@@ -28,7 +28,6 @@ function App() {
 
   useEffect(() => {
     if (user.user) {
-      console.log('affirmative')
       dispatch(fetchSavedComics(user.user));
     }
   }, [user, dispatch]);

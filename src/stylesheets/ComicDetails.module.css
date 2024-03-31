@@ -44,3 +44,7 @@
 .comicsList {
     display: none;
 }
+
+.activeList {
+    display: block;
+}

@@ -18,7 +18,6 @@ function ComicFilter() {
   };
 
   const handleFetchSavedComics = () => {
-    console.log('yes bro')
     dispatch(toggleShowFavorites(!showFavorites));
   };
 
