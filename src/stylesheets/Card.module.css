@@ -52,3 +52,8 @@
 .card p {
     color: white;
 }
+
+.showDetailsLink {
+    color: white;
+    font-size: calc(var(--size-8) * 2.5);
+}

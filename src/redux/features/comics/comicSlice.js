@@ -111,9 +111,6 @@ export const comicSlice = createSlice({
     removeComic: (state, action) => {
       state.comics = state.comics.filter(comic => comic.id !== action.payload);
     },
-    // setComics: (state, action) => {
-    //   state.allComics = action.payload;
-    // },
     incrementOffset: (state) => {
       state.offset += state.limit;
     },

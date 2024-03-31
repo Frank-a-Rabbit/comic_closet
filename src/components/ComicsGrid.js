@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import Card from './Card';
 import Pager from './Pager';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilter, faSpinner, faHandPointRight } from '@fortawesome/free-solid-svg-icons';
+import { faSpinner, faHandPointRight } from '@fortawesome/free-solid-svg-icons';
 import styles from '../stylesheets/ComicsGrid.module.css';
 
 const ComicsGrid = () => {
