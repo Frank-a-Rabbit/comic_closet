@@ -1,5 +1,7 @@
 .comicDetailContainer {
     padding: var(--size-16);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .comicDetailHeader {
@@ -47,4 +49,8 @@
 
 .activeList {
     display: block;
+}
+
+.comicDetailContainer button {
+    cursor: pointer;
 }

@@ -4,6 +4,7 @@
     padding-bottom: calc(var(--size-16) * 2);
     scroll-snap-type: x mandatory;
     margin-top: calc(var(--size-16) * 2);
+    max-width: 1200px;
 }
 
 @keyframes spin {
@@ -41,4 +42,24 @@
 
 .prompt svg {
     margin-left: var(--size-8);
+}
+
+@media (min-width: 590px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        overflow: auto;
+        gap: var(--size-16) var(--size-8);
+        padding: 0 var(--size-8);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .prompt {
+        display: none;
+    }
 }

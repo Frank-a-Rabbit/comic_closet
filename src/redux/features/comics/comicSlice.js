@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import CryptoJS from 'crypto-js';
-import { auth, databaseConnection, firebase } from '../../../utils/firebase';
+import { databaseConnection } from '../../../utils/firebase';
 import { doc, setDoc, arrayUnion, arrayRemove } from 'firebase/firestore';
 
 const initialState = {
@@ -30,31 +30,26 @@ export const fetchComics = createAsyncThunk(
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
-      return data.data.results; // Adjust based on the actual structure of the response
+      return data.data.results;
     } catch (error) {
       return rejectWithValue(error.message);
     }
   }
 );
 
-// Async thunk to fetch saved comics for the current user
 export const fetchSavedComics = createAsyncThunk(
   'comics/fetchSavedComics',
   async (user, { rejectWithValue }) => {
     try {
-      // Directly reference the document by the user's email
       const docRef = databaseConnection.collection('comics').doc(user.email);
       const docSnapshot = await docRef.get();
 
       if (docSnapshot.exists) {
-        // Assuming the array field is named 'comics' within the document
         const { comics } = docSnapshot.data();
-        console.log('Fetched comics:', comics);
         return comics;
       } else {
-        // Handle the case where there's no document for the user
         console.log('No document found for user:', user.email);
-        return []; // Returning an empty array or handle as needed
+        return [];
       }
     } catch (error) {
       console.error('Error fetching saved comics:', error);
@@ -67,10 +62,8 @@ export const addComicToUserFavorites = createAsyncThunk(
   'comics/addComicToUserFavorites',
   async ({ userEmail, comic }, { rejectWithValue, getState }) => {
     try {
-      // Note: Ensure your databaseConnection correctly points to your Firestore instance
       const userRef = doc(databaseConnection, 'comics', userEmail);
 
-      // Use setDoc with { merge: true } to update or create the document
       await setDoc(userRef, {
         comics: arrayUnion(comic)
       }, { merge: true });
@@ -88,7 +81,6 @@ export const removeComicFromUserFavorites = createAsyncThunk(
   async ({ userEmail, comic }, { rejectWithValue }) => {
     try {
       const userRef = doc(databaseConnection, 'comics', userEmail);
-      // Use setDoc with { merge: true } and arrayRemove to remove the comic
       await setDoc(userRef, {
         comics: arrayRemove(comic)
       }, { merge: true });
@@ -147,7 +139,6 @@ export const comicSlice = createSlice({
   },
 });
 
-// Export the new reducer function along with the existing ones
 export const { addComic, removeComic, incrementOffset, decrementOffset, toggleShowFavorites } = comicSlice.actions;
 
 export default comicSlice.reducer;

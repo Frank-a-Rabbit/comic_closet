@@ -8,6 +8,7 @@
 
 .pager button svg {
     transform: scale(2);
+    cursor: pointer;
 }
 
 .pager button:first-of-type {

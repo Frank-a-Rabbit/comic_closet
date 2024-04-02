@@ -57,3 +57,10 @@
     color: white;
     font-size: calc(var(--size-8) * 2.5);
 }
+
+@media (min-width: 590px) {
+    .card {
+        margin: 0;
+        min-width: auto;
+    }
+}
